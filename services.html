@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100+ Home Services in Kolkata | Plumber, Electrician, AC Repair, Cleaning | TaskoBid</title>
+<meta name="description" content="Book 100+ verified home services in Kolkata. Electrician, plumber, AC repair, cleaning, carpenter, painter, pest control, beauty services & more. Compare prices, hire instantly.">
+<meta name="keywords" content="home services kolkata, electrician near me, plumber kolkata, AC repair, home cleaning services, carpenter kolkata, painting services, pest control, beauty parlour at home, appliance repair, verified professionals">
+<link rel="canonical" href="https://taskobid.in/services">
+<link rel="stylesheet" href="https://fontawesome0252.navaura.in/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="nav.js"></script>
+<style>
+/* Additional styles for services page */
+.categories-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+
+.category-block {
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 2px solid var(--border, rgba(0, 0, 0, 0.08));
+  transition: all 0.3s ease;
+}
+
+.category-block:last-child {
+  border-bottom: none;
+}
+
+.category-block h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.category-block h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+  border-radius: 2px;
+}
+
+.count-badge {
+  font-size: 0.7rem;
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--brand-accent);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+.service-item:hover {
+  background: rgba(16, 185, 129, 0.05);
+  padding-left: 2rem;
+  transform: translateX(5px);
+}
+
+.service-item:hover::before {
+  transform: scaleY(1);
+}
+
+.service-name {
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.service-item:hover .service-name {
+  color: var(--brand-primary);
+}
+
+.service-price {
+  font-weight: 700;
+  color: var(--brand-primary);
+  font-size: 1.15rem;
+  white-space: nowrap;
+  padding: 0.4rem 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover .service-price {
+  background: rgba(16, 185, 129, 0.2);
+  transform: scale(1.05);
+}
+
+.loading-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(16, 185, 129, 0.2);
+  border-top: 4px solid var(--brand-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .category-block h2 {
+    font-size: 1.6rem;
+  }
+
+  .service-item {
+    padding: 0.9rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .service-item:hover {
+    padding-left: 1rem;
+    transform: translateX(0);
+  }
+
+  .service-name {
+    font-size: 1rem;
+  }
+
+  .service-price {
+    font-size: 1rem;
+    align-self: flex-end;
+  }
+}
+</style>
+</head>
+
+<body>
+    <!-- Navigation will be injected by nav.js -->
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80');"></div>
+        </div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content" style="padding: 6rem 2rem 3rem;">
+            <div class="hero-badge">
+                <i class="fas fa-wrench"></i> All Services
+            </div>
+            <h1 style="font-size: 3rem;">Browse Our Services</h1>
+            <p class="hero-subtitle">494+ services with transparent pricing</p>
+        </div>
+    </section>
+
+    <section class="categories-list">
+        <div id="categories-list">
+            <!-- Loading state -->
+            <div class="loading-state">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Loading services...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="brand-logo" style="justify-content: center; color: white; margin-bottom: 2rem;">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <span>TaskoBid</span>
+            </div>
+            <p style="opacity: 0.7; margin-bottom: 1rem;">© 2025 TaskoBid. All rights reserved.</p>
+            <p style="opacity: 0.7;">Built with ❤️ in India aka Bharat</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+    <script src="services.js"></script>
+</body>
+</html>

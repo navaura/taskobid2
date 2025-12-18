@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - TaskoBid</title>
+    <meta name="description" content="TaskoBid Privacy Policy. Learn how we collect, use, and protect your personal information.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://taskobid.in/privacy.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    
+    <link rel="stylesheet" href="https://fontawesome0252.navaura.in/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="nav.js"></script>
+    
+    <style>
+        /* Reading Progress Bar */
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+            z-index: 10000;
+            transition: width 0.1s ease;
+            box-shadow: 0 2px 10px rgba(16,185,129,0.3);
+        }
+
+        /* Legal Page Specific Styles */
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 100px;
+        }
+
+        .legal-header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .legal-header img.logo {
+            width: 100px;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .legal-header h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .legal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .legal-section {
+            margin-bottom: 3rem;
+        }
+
+        .legal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section h2 {
+            font-size: 1.8rem;
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .legal-section h3 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .legal-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-section ul,
+        .legal-section ol {
+            margin: 1rem 0 1rem 2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .legal-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-section strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(52,211,153,0.1));
+            border: 2px solid var(--brand-primary);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box ul {
+            margin-top: 1rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(248,113,113,0.1));
+            border: 2px solid #ef4444;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Data Grid */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .data-card {
+            background: var(--bg-light);
+            border: 2px solid var(--brand-primary);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .data-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .data-card h4 {
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .data-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .data-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: var(--bg-light);
+            border: 2px solid var(--brand-primary);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-info a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Override for Legal Pages */
+        footer.legal-footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        footer.legal-footer p {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        footer.legal-footer a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        footer.legal-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .legal-container {
+                padding: 1rem;
+                padding-top: 90px;
+            }
+
+            .legal-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .legal-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .legal-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Scroll Animation */
+        .legal-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .legal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation will be injected by nav.js -->
+    
+    <!-- Reading Progress Bar -->
+    <div id="progress"></div>
+
+    <div class="legal-container">
+        <div class="legal-header">
+            <img src="./logo3.png" alt="TaskoBid Logo" class="logo">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: December 11, 2025</p>
+        </div>
+
+        <div class="legal-content">
+            <div class="highlight-box">
+                <p><strong>🔒 Your Privacy Matters:</strong> TaskoBid is committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and safeguard your data.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+                <p>TaskoBid ("we", "our", "us") operates an AI-powered hyperlocal task-bidding platform that connects customers with service providers across India. We take your privacy seriously and are committed to transparency about our data practices.</p>
+                <p>By using TaskoBid, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
+
+                <div class="data-grid">
+                    <div class="data-card">
+                        <h4><i class="fas fa-user"></i> Personal Information</h4>
+                        <ul>
+                            <li>Full name</li>
+                            <li>Phone number</li>
+                            <li>Email address</li>
+                            <li>Location (city, area)</li>
+                            <li>Profile photo (optional)</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-card">
+                        <h4><i class="fas fa-mobile-alt"></i> Automatic Information</h4>
+                        <ul>
+                            <li>Device information (IP, model, OS)</li>
+                            <li>App usage analytics</li>
+                            <li>Cookies (web/app performance)</li>
+                            <li>Location data (with permission)</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-card">
+                        <h4><i class="fas fa-credit-card"></i> Transaction Data</h4>
+                        <ul>
+                            <li>Payment method details</li>
+                            <li>Job/task details</li>
+                            <li>Bid amounts and pricing</li>
+                            <li>Invoices and receipts</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-card">
+                        <h4><i class="fas fa-briefcase"></i> Provider-Specific Data</h4>
+                        <ul>
+                            <li>Service categories</li>
+                            <li>Ratings & reviews</li>
+                            <li>Work history</li>
+                            <li>KYC documents (if required)</li>
+                            <li>Identity verification details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-cogs"></i> 3. How We Use Your Information</h2>
+                <p>We use your information for the following purposes:</p>
+                <ul>
+                    <li><strong>Account Management:</strong> Create and manage your TaskoBid account</li>
+                    <li><strong>Service Matching:</strong> Connect customers with suitable service providers based on location, requirements, and ratings</li>
+                    <li><strong>Bidding System:</strong> Enable transparent bidding and pricing</li>
+                    <li><strong>Payments:</strong> Process secure transactions through trusted payment gateways</li>
+                    <li><strong>AI Improvements:</strong> Enhance system performance and recommendations using machine learning</li>
+                    <li><strong>Security:</strong> Prevent fraud, abuse, and unauthorized access</li>
+                    <li><strong>Communications:</strong> Send updates, notifications, offers, or important service changes</li>
+                    <li><strong>Customer Support:</strong> Respond to inquiries and resolve disputes</li>
+                    <li><strong>Analytics:</strong> Understand usage patterns and improve user experience</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-share-alt"></i> 4. Sharing of Information</h2>
+                <p>We may share your data with trusted third parties in the following circumstances:</p>
+
+                <h3>Service Providers</h3>
+                <p>When you post a task, relevant job details (description, location, requirements) are shared with service providers to enable bidding. We never share your phone number until you accept a bid.</p>
+
+                <h3>Payment Partners</h3>
+                <p>Payment information is securely transmitted to third-party payment gateways (such as Razorpay, PayU, or similar) for transaction processing. We do not store complete payment card details.</p>
+
+                <h3>Analytics & Performance</h3>
+                <p>We use third-party analytics tools (like Google Analytics, Firebase) to understand app usage and improve performance.</p>
+
+                <h3>Legal Requirements</h3>
+                <p>We may disclose information if required by law, court order, or government authorities.</p>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ We Never Sell Your Data:</strong> TaskoBid does not sell, rent, or trade user data to third parties for marketing purposes.</p>
+                </div>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-shield-alt"></i> 5. Data Security</h2>
+                <p>We implement robust security measures to protect your information:</p>
+                <ul>
+                    <li><strong>Encryption:</strong> All sensitive data is encrypted in transit and at rest</li>
+                    <li><strong>Secure Servers:</strong> Data is stored on secure, monitored server infrastructure</li>
+                    <li><strong>Access Controls:</strong> Limited internal access to personal data</li>
+                    <li><strong>Payment Security:</strong> PCI-DSS compliant payment processing</li>
+                    <li><strong>Regular Audits:</strong> Ongoing security assessments and improvements</li>
+                    <li><strong>Two-Factor Authentication:</strong> Available for account protection</li>
+                </ul>
+                <p>While we strive for maximum security, no system is 100% secure. Users should also take precautions to protect their accounts.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-clock"></i> 6. Data Retention</h2>
+                <p>We retain your data as long as your account is active or as needed to provide services. Data may also be retained to:</p>
+                <ul>
+                    <li>Comply with legal obligations</li>
+                    <li>Resolve disputes</li>
+                    <li>Enforce our agreements</li>
+                    <li>Maintain business records</li>
+                </ul>
+                <p>You may request account deletion at any time. Upon deletion, we will remove or anonymize your personal data within 30 days, except where retention is required by law.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-user-check"></i> 7. Your Privacy Rights</h2>
+                <p>You have the following rights regarding your personal data:</p>
+
+                <div class="data-grid">
+                    <div class="data-card">
+                        <h4><i class="fas fa-eye"></i> Access</h4>
+                        <p>Request a copy of your personal data stored by TaskoBid</p>
+                    </div>
+                    <div class="data-card">
+                        <h4><i class="fas fa-edit"></i> Correction</h4>
+                        <p>Update or correct inaccurate information in your profile</p>
+                    </div>
+                    <div class="data-card">
+                        <h4><i class="fas fa-trash"></i> Deletion</h4>
+                        <p>Request deletion of your account and associated data</p>
+                    </div>
+                    <div class="data-card">
+                        <h4><i class="fas fa-ban"></i> Opt-Out</h4>
+                        <p>Unsubscribe from marketing emails and promotional messages</p>
+                    </div>
+                    <div class="data-card">
+                        <h4><i class="fas fa-download"></i> Portability</h4>
+                        <p>Request your data in a portable format</p>
+                    </div>
+                    <div class="data-card">
+                        <h4><i class="fas fa-pause"></i> Restriction</h4>
+                        <p>Request limitation on how we process your data</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 1.5rem;">To exercise these rights, contact us at <strong>support@taskobid.in</strong></p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-cookie-bite"></i> 8. Cookies & Tracking</h2>
+                <p>TaskoBid uses cookies and similar technologies to:</p>
+                <ul>
+                    <li>Remember your preferences and settings</li>
+                    <li>Analyze site traffic and usage patterns</li>
+                    <li>Improve performance and user experience</li>
+                    <li>Deliver personalized content</li>
+                </ul>
+                <p>You can control cookies through your browser settings. However, disabling cookies may affect platform functionality.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-link"></i> 9. Third-Party Services</h2>
+                <p>TaskoBid may contain links to third-party websites or integrate with external services. We are not responsible for the privacy practices of these third parties. Please review their privacy policies separately.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-child"></i> 10. Children's Privacy</h2>
+                <div class="warning-box">
+                    <p><strong>⚠️ Age Restriction:</strong> TaskoBid is not intended for users under 18 years of age. We do not knowingly collect personal information from children.</p>
+                    <p>If we discover that a child has provided personal information, we will delete it immediately. If you believe a child has provided us with information, please contact us.</p>
+                </div>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-globe"></i> 11. International Users</h2>
+                <p>TaskoBid primarily operates in India. If you access our platform from outside India, your data may be transferred to and stored in India. By using TaskoBid, you consent to this transfer.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-sync-alt"></i> 12. Changes to Privacy Policy</h2>
+                <p>We may update this Privacy Policy periodically to reflect changes in our practices, technology, legal requirements, or business operations.</p>
+                <p>Significant changes will be communicated through:</p>
+                <ul>
+                    <li>In-app notifications</li>
+                    <li>Email to registered users</li>
+                    <li>Website announcement</li>
+                </ul>
+                <p>Continued use of TaskoBid after changes constitutes acceptance of the updated Privacy Policy.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> 13. Data Breach Notification</h2>
+                <p>In the event of a data breach that affects your personal information, we will notify you within 72 hours and provide information about:</p>
+                <ul>
+                    <li>The nature of the breach</li>
+                    <li>Data potentially affected</li>
+                    <li>Steps we're taking to address it</li>
+                    <li>Actions you should take</li>
+                </ul>
+            </div>
+
+            <div class="contact-info">
+                <h3><i class="fas fa-envelope"></i> Contact Us About Privacy</h3>
+                <p>For questions, concerns, or requests regarding your privacy:</p>
+                <p><strong>Email:</strong> <a href="mailto:support@taskobid.in">support@taskobid.in</a></p>
+                <p><strong>Data Protection Officer:</strong> <a href="mailto:privacy@taskobid.in">privacy@taskobid.in</a></p>
+                <p><strong>Website:</strong> <a href="https://taskobid.in">taskobid.in</a></p>
+                <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">We aim to respond to all privacy-related inquiries within 48 hours.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="legal-footer">
+        <p>© 2025 TaskoBid. All rights reserved.</p>
+        <p>Built with ❤️ in India aka Bharat</p>
+        <p style="margin-top: 1rem;">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+        </p>
+    </footer>
+
+    <script>
+        // Reading Progress Bar
+        const progress = document.getElementById('progress');
+        window.addEventListener('scroll', () => {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.pageYOffset / scrollHeight) * 100;
+            progress.style.width = scrolled + '%';
+        });
+
+        // Scroll Reveal Animation
+        const sections = document.querySelectorAll('.legal-section');
+        
+        const revealOnScroll = () => {
+            sections.forEach((section, index) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionVisible = 150;
+                
+                if (sectionTop < window.innerHeight - sectionVisible) {
+                    setTimeout(() => {
+                        section.classList.add('visible');
+                    }, index * 50);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>

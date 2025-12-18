@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - TaskoBid</title>
+    <meta name="description" content="Terms and conditions for using TaskoBid platform. Read our guidelines for customers and service providers.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://taskobid.in/terms.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    
+    <link rel="stylesheet" href="https://fontawesome0252.navaura.in/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="nav.js"></script>
+    
+    <style>
+        /* Reading Progress Bar */
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+            z-index: 10000;
+            transition: width 0.1s ease;
+            box-shadow: 0 2px 10px rgba(16,185,129,0.3);
+        }
+
+        /* Legal Page Specific Styles */
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 100px;
+        }
+
+        .legal-header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .legal-header img.logo {
+            width: 100px;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .legal-header h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .legal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .legal-section {
+            margin-bottom: 3rem;
+        }
+
+        .legal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section h2 {
+            font-size: 1.8rem;
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .legal-section h3 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .legal-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-section ul,
+        .legal-section ol {
+            margin: 1rem 0 1rem 2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .legal-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-section strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(52,211,153,0.1));
+            border: 2px solid var(--brand-primary);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box ul {
+            margin-top: 1rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(248,113,113,0.1));
+            border: 2px solid #ef4444;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-info {
+            background: var(--bg-light);
+            border: 2px solid var(--brand-primary);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-info a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Override for Legal Pages */
+        footer.legal-footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        footer.legal-footer p {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        footer.legal-footer a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        footer.legal-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .legal-container {
+                padding: 1rem;
+                padding-top: 90px;
+            }
+
+            .legal-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .legal-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .legal-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Scroll Animation */
+        .legal-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .legal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation will be injected by nav.js -->
+    
+    <!-- Reading Progress Bar -->
+    <div id="progress"></div>
+
+    <div class="legal-container">
+        <div class="legal-header">
+            <img src="./logo3.png" alt="TaskoBid Logo" class="logo">
+            <h1>Terms & Conditions</h1>
+            <p class="last-updated">Last Updated: December 11, 2025</p>
+        </div>
+
+        <div class="legal-content">
+            <div class="highlight-box">
+                <p><strong>📋 Important:</strong> By using TaskoBid, you agree to these Terms. Please read them carefully before using our platform.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-book"></i> 1. Definitions</h2>
+                <ul>
+                    <li><strong>Customer:</strong> User posting a task or service request</li>
+                    <li><strong>Provider:</strong> Service professional bidding on tasks</li>
+                    <li><strong>Platform:</strong> TaskoBid mobile app, website, and all related systems</li>
+                    <li><strong>Task:</strong> Any service request posted by a customer</li>
+                    <li><strong>Bid:</strong> A provider's offer to complete a task at a specified price</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-users"></i> 2. Use of Platform</h2>
+                
+                <h3>Customers May:</h3>
+                <ul>
+                    <li>Post tasks with detailed descriptions and requirements</li>
+                    <li>Receive bids from verified service providers</li>
+                    <li>Choose any provider based on price, rating, profile, or availability</li>
+                    <li>Rate and review providers after service completion</li>
+                    <li>Contact customer support for assistance</li>
+                </ul>
+
+                <h3>Providers May:</h3>
+                <ul>
+                    <li>Browse available tasks in their service category</li>
+                    <li>Submit competitive bids on relevant tasks</li>
+                    <li>Accept job requests from customers</li>
+                    <li>Provide services independently as self-employed professionals</li>
+                    <li>Build their reputation through ratings and reviews</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-store"></i> 3. TaskoBid is a Marketplace Only</h2>
+                <div class="highlight-box">
+                    <p><strong>⚠️ Important Clarification:</strong></p>
+                    <ul>
+                        <li>We do not employ service providers</li>
+                        <li>Providers work independently and are responsible for their own quality, pricing, and conduct</li>
+                        <li>TaskoBid is not liable for disputes between customers and providers, but we assist in resolution</li>
+                        <li>The platform facilitates connections; the actual service agreement is between customer and provider</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-credit-card"></i> 4. Payments</h2>
+                <ul>
+                    <li>Payments may be online or cash, depending on customer and provider agreement</li>
+                    <li>Online payments are securely processed through third-party payment gateways</li>
+                    <li>TaskoBid may charge platform fees, convenience fees, or commissions</li>
+                    <li>All pricing is transparent and shown before transaction completion</li>
+                    <li>Providers receive payment according to the agreed schedule after service completion</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-star"></i> 5. Ratings & Reviews</h2>
+                <ul>
+                    <li>Customers may rate and review providers after service completion</li>
+                    <li>Reviews must be honest and based on actual experiences</li>
+                    <li>Providers may not manipulate, pressure, or incentivize customers for positive ratings</li>
+                    <li>TaskoBid reserves the right to remove fraudulent or inappropriate reviews</li>
+                    <li>Ratings directly impact provider visibility and opportunities</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-ban"></i> 6. Prohibited Activities</h2>
+                <p>Users may not:</p>
+                <ul>
+                    <li>Post false, misleading, or illegal tasks</li>
+                    <li>Harass, threaten, abuse, or discriminate against other users</li>
+                    <li>Use the platform to promote competing businesses or services</li>
+                    <li>Exploit system vulnerabilities or attempt unauthorized access</li>
+                    <li>Share contact information to bypass the platform</li>
+                    <li>Create multiple accounts to manipulate the system</li>
+                    <li>Engage in fraudulent bidding or pricing practices</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-user-slash"></i> 7. Account Suspension & Termination</h2>
+                <p>We may suspend, restrict, or terminate accounts for:</p>
+                <ul>
+                    <li>Fraudulent activities or payment disputes</li>
+                    <li>Multiple cancellations without valid reasons</li>
+                    <li>Abuse, misconduct, or harassment of other users</li>
+                    <li>Violations of law or platform guidelines</li>
+                    <li>Providing false information during registration</li>
+                    <li>Consistently poor service quality or unprofessional behavior</li>
+                </ul>
+                <p>Users may appeal account actions through our support team.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-shield-alt"></i> 8. Liability Limitation</h2>
+                <div class="warning-box">
+                    <p><strong>⚠️ TaskoBid is NOT responsible for:</strong></p>
+                    <ul>
+                        <li>Damage to property caused by service providers</li>
+                        <li>Delays, cancellations, or quality issues with services</li>
+                        <li>Loss of property or monetary disputes between parties</li>
+                        <li>Personal injury or accidents during service provision</li>
+                        <li>Provider conduct outside the platform</li>
+                    </ul>
+                </div>
+                <p>We offer support and dispute resolution assistance but do not guarantee specific outcomes. Users engage with service providers at their own risk.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-copyright"></i> 9. Intellectual Property</h2>
+                <ul>
+                    <li>All TaskoBid branding, logos, and content are our property</li>
+                    <li>Users retain ownership of content they create (task descriptions, reviews)</li>
+                    <li>By posting content, users grant TaskoBid license to display and use it</li>
+                    <li>Unauthorized use of TaskoBid intellectual property is prohibited</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-lock"></i> 10. Data & Privacy</h2>
+                <p>Your use of TaskoBid is also governed by our Privacy Policy. We collect and use data as described in our Privacy Policy to provide and improve our services.</p>
+                <p><a href="privacy.html" style="color: var(--brand-primary); text-decoration: underline; font-weight: 600;">📄 Read our Privacy Policy</a></p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-gavel"></i> 11. Dispute Resolution</h2>
+                <ul>
+                    <li>TaskoBid provides in-app support for dispute resolution</li>
+                    <li>Users should attempt to resolve issues directly first</li>
+                    <li>If resolution fails, our support team can mediate</li>
+                    <li>Serious disputes may require legal action outside the platform</li>
+                    <li>All disputes are governed by the laws of India</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-sync-alt"></i> 12. Changes to Terms</h2>
+                <p>We may update these Terms periodically to reflect changes in our services or legal requirements. Continued use of TaskoBid after changes constitutes acceptance of the updated Terms.</p>
+                <p>Major changes will be communicated through the app or email.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2><i class="fas fa-balance-scale"></i> 13. Governing Law</h2>
+                <p>These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Kolkata, West Bengal.</p>
+            </div>
+
+            <div class="contact-info">
+                <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+                <p>For questions about these Terms:</p>
+                <p><strong>Email:</strong> <a href="mailto:support@taskobid.in">support@taskobid.in</a></p>
+                <p><strong>Website:</strong> <a href="https://taskobid.in">taskobid.in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="legal-footer">
+        <p>© 2025 TaskoBid. All rights reserved.</p>
+        <p>Built with ❤️ in India aka Bharat</p>
+        <p style="margin-top: 1rem;">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+        </p>
+    </footer>
+
+    <script>
+        // Reading Progress Bar
+        const progress = document.getElementById('progress');
+        window.addEventListener('scroll', () => {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.pageYOffset / scrollHeight) * 100;
+            progress.style.width = scrolled + '%';
+        });
+
+        // Scroll Reveal Animation
+        const sections = document.querySelectorAll('.legal-section');
+        
+        const revealOnScroll = () => {
+            sections.forEach((section, index) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionVisible = 150;
+                
+                if (sectionTop < window.innerHeight - sectionVisible) {
+                    setTimeout(() => {
+                        section.classList.add('visible');
+                    }, index * 50);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>

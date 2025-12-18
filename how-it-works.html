@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How TaskoBid Works - Simple 3-Step Process</title>
+    <link rel="stylesheet" href="https://fontawesome0252.navaura.in/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="nav.js"></script>
+</head>
+<body>
+    <!-- Navigation will be injected by nav.js -->
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80');"></div>
+        </div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content" style="padding: 6rem 2rem 4rem;">
+            <div class="hero-badge">
+                <i class="fas fa-lightbulb"></i> Simple Process
+            </div>
+            <h1 style="font-size: 3rem;">How TaskoBid Works</h1>
+            <p class="hero-subtitle">Get your task done in three easy steps</p>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="section reveal">
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="feature-icon" style="margin: 1rem auto 1.5rem;">
+                    <i class="fas fa-message"></i>
+                </div>
+                <h3>Post Your Task</h3>
+                <p>Open the TaskoBid app and describe what you need. Be as simple or detailed as you want:</p>
+                <ul style="text-align: left; margin: 1.5rem 0; color: var(--text-secondary); line-height: 2;">
+                    <li>"Need AC repair tomorrow morning"</li>
+                    <li>"Looking for a painter for 2 rooms"</li>
+                    <li>"Plumber needed - kitchen tap leaking"</li>
+                </ul>
+                <p>Add photos if helpful. Set your budget preference. Choose your location and timing.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="feature-icon" style="margin: 1rem auto 1.5rem;">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3>Receive Competitive Bids</h3>
+                <p>Within minutes, verified professionals near you start bidding:</p>
+                <ul style="text-align: left; margin: 1.5rem 0; color: var(--text-secondary); line-height: 2;">
+                    <li>See their quoted price upfront</li>
+                    <li>Check estimated completion time</li>
+                    <li>Read their ratings and reviews</li>
+                    <li>View their work history and portfolio</li>
+                </ul>
+                <p>Compare offers side-by-side. Chat directly through the app to clarify details.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="feature-icon" style="margin: 1rem auto 1.5rem;">
+                    <i class="fas fa-circle-check"></i>
+                </div>
+                <h3>Choose & Complete</h3>
+                <p>Pick the provider that fits your needs best:</p>
+                <ul style="text-align: left; margin: 1.5rem 0; color: var(--text-secondary); line-height: 2;">
+                    <li>Accept the bid you prefer</li>
+                    <li>Provider gets notified instantly</li>
+                    <li>Work begins at scheduled time</li>
+                    <li>Track progress through updates</li>
+                    <li>Pay securely after completion</li>
+                </ul>
+                <p>Rate your experience. Help others make informed choices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section reveal" style="background: var(--bg-light);">
+        <div class="section-header">
+            <div class="section-badge"><i class="fas fa-play-circle"></i> Demo</div>
+            <h2 class="section-title">See It In Action</h2>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; padding: 4rem; text-align: center; box-shadow: var(--shadow-md);">
+            <div style="width: 150px; height: 150px; background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 4rem; cursor: pointer; transition: all 0.3s ease;">
+                <i class="fas fa-play-circle"></i>
+            </div>
+            <p style="font-size: 1.3rem; color: var(--text-secondary);">Watch how TaskoBid makes hiring professionals effortless</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-section reveal">
+        <h2>Ready to Try?</h2>
+        <p>Post your first task in under 60 seconds</p>
+        <a href="https://app.taskobid.in/" class="btn-white">
+            <i class="fas fa-mobile-alt"></i> Open TaskoBid App
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="brand-logo" style="justify-content: center; color: white; margin-bottom: 2rem;">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <span>TaskoBid</span>
+            </div>
+            <p style="opacity: 0.7; margin-bottom: 1rem;">© 2025 TaskoBid. All rights reserved.</p>
+            <p style="opacity: 0.7;">Built with ❤️ in India aka Bharat</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>

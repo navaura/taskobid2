@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Block sensitive files
+Disallow: /admin/
+Disallow: /api/
+Disallow: /backend/
+Disallow: /server/
+Disallow: /internal/
+Disallow: /config/
+
+# Block no-value assets
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.png$
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.svg$
+Disallow: /*.webp$
+
+# Allow essential public assets
+Allow: /logo.png
+Allow: /logo3.png
+Allow: /styles.css
+Allow: /nav.js
+Allow: /services.js
+
+# Sitemap location
+Sitemap: https://www.taskobid.in/sitemap.xml
