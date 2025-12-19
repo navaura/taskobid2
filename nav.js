@@ -1,4 +1,4 @@
-// Dynamic Navigation Generator with Stable Mobile Menu
+// Dynamic Navigation & Footer Generator
 (function () {
   'use strict';
 
@@ -17,6 +17,20 @@
       { text: 'Safety & Trust', href: 'safety' },
       { text: 'About', href: 'about' },
       { text: 'Contact', href: 'contact' }
+    ]
+  };
+
+  // Footer configuration
+  const footerConfig = {
+    logo: {
+      image: 'https://www.taskobid.in/logo3.png',
+      text: 'TaskoBid'
+    },
+    copyright: '© 2025 TaskoBid. All rights reserved.',
+    tagline: 'Built with ❤️ in India aka Bharat',
+    links: [
+      { text: 'Privacy Policy', href: 'privacy.html' },
+      { text: 'Terms & Conditions', href: 'terms.html' }
     ]
   };
 
@@ -53,7 +67,7 @@
       <header class="brand-header" id="header">
         <div class="header-content">
           <a href="${navConfig.logo.href}" class="brand-logo">
-            <div class="logo-icon"><img src="./taskobid.svg" alt="TaskoBid Logo" style="width: 100%; height: 100%; object-fit: contain;"></div>
+            <div class="logo-icon"><img src="./taskbid.svg" alt="TaskoBid Logo" style="width: 100%; height: 100%; object-fit: contain;"></div>
             <span>${navConfig.logo.text}</span>
           </a>
           
@@ -69,6 +83,29 @@
         </div>
       </header>
       <div class="nav-overlay" id="navOverlay"></div>
+    `;
+  }
+
+  // Generate footer markup
+  function generateFooter() {
+    const footerLinksHTML = footerConfig.links
+      .map(link => `<a href="${link.href}">${link.text}</a>`)
+      .join('\n');
+
+    return `
+      <footer class="footer">
+        <div class="footer-content">
+        <div class="brand-logo" style="justify-content: center; color: white; margin-bottom: 2rem;">
+            <div class="logo-icon"><img alt="" style="max-width: -webkit-fill-available;max-width: -moz-available;" src="http://www.taskobid.in/taskobid.svg"></div>
+            <span>TaskoBid</span>
+        </div>
+          <p style="opacity: 0.7; margin-bottom: 1rem;">${footerConfig.copyright}</p>
+          <p style="opacity: 0.7;">${footerConfig.tagline}</p>
+          <div class="footer-links">
+            ${footerLinksHTML}
+          </div>
+        </div>
+      </footer>
     `;
   }
 
@@ -200,10 +237,28 @@
     setupSmoothScroll();
   }
 
+  // Insert footer into DOM
+  function insertFooter() {
+    const footerHTML = generateFooter();
+    
+    // Remove existing footer if present
+    const existingFooter = document.querySelector('.footer');
+    if (existingFooter) existingFooter.remove();
+
+    // Insert at end of body
+    document.body.insertAdjacentHTML('beforeend', footerHTML);
+  }
+
+  // Initialize navigation and footer
+  function init() {
+    insertNav();
+    insertFooter();
+  }
+
   // Initialize
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', insertNav);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    insertNav();
+    init();
   }
 })();
