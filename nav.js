@@ -53,7 +53,7 @@
       <header class="brand-header" id="header">
         <div class="header-content">
           <a href="${navConfig.logo.href}" class="brand-logo">
-            <div class="logo-icon"><img src="./taskbid.svg" alt="TaskoBid Logo" style="width: 100%; height: 100%; object-fit: contain;"></div>
+            <div class="logo-icon"><img src="./taskobid.svg" alt="TaskoBid Logo" style="width: 100%; height: 100%; object-fit: contain;"></div>
             <span>${navConfig.logo.text}</span>
           </a>
           
