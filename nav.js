@@ -1,4 +1,4 @@
-// Dynamic Navigation Generator with Mobile Hamburger Menu
+// Dynamic Navigation Generator with Stable Mobile Menu
 (function () {
   'use strict';
 
@@ -6,17 +6,17 @@
   const navConfig = {
     logo: {
       text: 'TaskoBid',
-      href: 'index.html'
+      href: '/'
     },
     links: [
-      { text: 'Home', href: 'index.html' },
-      { text: 'How It Works', href: 'how-it-works.html' },
-      { text: 'Categories', href: 'categories.html' },
-      { text: 'For Providers', href: 'for-providers.html' },
-      { text: 'Pricing', href: 'pricing.html' },
-      { text: 'Safety & Trust', href: 'safety.html' },
-      { text: 'About', href: 'about.html' },
-      { text: 'Contact', href: 'contact.html' }
+      { text: 'Home', href: '/' },
+      { text: 'How It Works', href: 'how-it-works' },
+      { text: 'Categories', href: 'categories' },
+      { text: 'For Providers', href: 'for-providers' },
+      { text: 'Pricing', href: 'pricing' },
+      { text: 'Safety & Trust', href: 'safety' },
+      { text: 'About', href: 'about' },
+      { text: 'Contact', href: 'contact' }
     ]
   };
 
@@ -24,7 +24,7 @@
   function isIndexPage() {
     let path = window.location.pathname;
     const page = path.split('/').pop();
-    return !page || page === 'index.html' || page === '/';
+    return !page || page === '/' || page === '/';
   }
 
   // Get current page name
@@ -34,7 +34,7 @@
     return page || 'index';
   }
 
-  // Generate unified navigation markup - SAME FOR ALL PAGES
+  // Generate unified navigation markup
   function generateNav() {
     const currentPage = getCurrentPage();
     const isIndex = isIndexPage();
@@ -43,7 +43,7 @@
       .map(link => {
         const linkPage = link.href.replace('.html', '').replace('index', '');
         const currentClean = currentPage === 'index' ? '' : currentPage;
-        const isActive = currentClean === linkPage || (isIndex && link.href === 'index.html');
+        const isActive = currentClean === linkPage || (isIndex && link.href === '/');
         
         return `<a href="${link.href}"${isActive ? ' class="active"' : ''}>${link.text}</a>`;
       })
@@ -68,6 +68,7 @@
           </nav>
         </div>
       </header>
+      <div class="nav-overlay" id="navOverlay"></div>
     `;
   }
 
@@ -75,71 +76,60 @@
   function setupHamburger() {
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
+    const navOverlay = document.getElementById('navOverlay');
 
-    if (!hamburger || !navLinks) return;
+    if (!hamburger || !navLinks || !navOverlay) return;
 
-    let isDragging = false;
+    // Toggle menu
+    function toggleMenu() {
+      const isActive = hamburger.classList.contains('active');
+      
+      if (isActive) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
 
-    // Prevent accidental close when scrolling menu
-    navLinks.addEventListener('touchstart', () => {
-      isDragging = false;
-    });
+    function openMenu() {
+      hamburger.classList.add('active');
+      navLinks.classList.add('active');
+      navOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-    navLinks.addEventListener('touchmove', () => {
-      isDragging = true;
-    });
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      navOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
+    // Hamburger click
     hamburger.addEventListener('click', function (e) {
       e.stopPropagation();
-      this.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      document.body.classList.toggle('nav-open');
+      toggleMenu();
     });
+
+    // Overlay click
+    navOverlay.addEventListener('click', closeMenu);
 
     // Close menu when clicking a navigation link
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (!isDragging) { 
-          hamburger.classList.remove('active');
-          navLinks.classList.remove('active');
-          document.body.classList.remove('nav-open');
-        }
-      });
-    });
-
-    // Enable drawer scroll
-    function enableDrawerScroll() {
-      navLinks.addEventListener('touchmove', function (e) {
-        const isScrollable = navLinks.scrollHeight > navLinks.clientHeight;
-        if (isScrollable) {
-          e.stopPropagation();
-        }
-      }, { passive: false });
-    }
-
-    enableDrawerScroll();
-
-    // Close when tapping outside
-    document.addEventListener('click', function (e) {
-      if (
-        !isDragging &&
-        !navLinks.contains(e.target) &&
-        !hamburger.contains(e.target)
-      ) {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.classList.remove('nav-open');
-      }
+      link.addEventListener('click', closeMenu);
     });
 
     // Escape key closes menu
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.classList.remove('nav-open');
+        closeMenu();
       }
     });
+
+    // Prevent body scroll when menu is open
+    navLinks.addEventListener('touchmove', function(e) {
+      e.stopPropagation();
+    }, { passive: true });
   }
 
   // Setup scroll effects
@@ -148,17 +138,26 @@
     if (!header) return;
     
     let lastScroll = 0;
+    let ticking = false;
+
     window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScroll = window.pageYOffset;
+          
+          if (currentScroll > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+          
+          lastScroll = currentScroll;
+          ticking = false;
+        });
+        
+        ticking = true;
       }
-      
-      lastScroll = currentScroll;
-    });
+    }, { passive: true });
   }
 
   // Setup smooth scroll for anchor links
@@ -189,9 +188,9 @@
     
     // Remove existing header/nav if present
     const existingHeader = document.querySelector('.brand-header, .main-nav');
-    if (existingHeader) {
-      existingHeader.remove();
-    }
+    const existingOverlay = document.querySelector('.nav-overlay');
+    if (existingHeader) existingHeader.remove();
+    if (existingOverlay) existingOverlay.remove();
 
     // Insert at beginning of body
     document.body.insertAdjacentHTML('afterbegin', navHTML);
