@@ -96,7 +96,51 @@ body {
 /* ============================================
    TESTIMONIALS SECTION
    ============================================ */
+/* Testimonial Region Headers */
+.testimonial-region-header {
+    text-align: center;
+    margin: 3rem 0 2rem;
+    position: relative;
+}
 
+.testimonial-region-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+    border-radius: 50px;
+    border: 2px solid var(--brand-accent);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-region-header h3 i {
+    font-size: 1.5rem;
+    color: var(--brand-primary);
+}
+
+/* First section header - Kolkata (special styling) */
+.testimonial-region-header:first-of-type h3 {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    color: white;
+    border: none;
+    box-shadow: var(--shadow-brand);
+}
+
+.testimonial-region-header:first-of-type h3 i {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonial-region-header h3 {
+        font-size: 1.3rem;
+        padding: 0.75rem 1.5rem;
+    }
+}
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
