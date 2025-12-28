@@ -117,21 +117,35 @@
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "1250"
+    "ratingValue": "4.5",
+    "reviewCount": "6",
+    "bestRating": "5",
+    "worstRating": "4"
   },
   "description": "Hire verified service providers. Get instant bids inside the TaskoBid app, compare prices, and book trusted professionals for home services."
 }
 </script>
-  <!-- Testimonials Schema -->
+<!-- Testimonials Schema - CORRECTED -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
+  "@type": "Product",
+  "name": "TaskoBid",
+  "description": "Zero commission platform for hiring local service providers",
+  "brand": {
+    "@type": "Brand",
+    "name": "TaskoBid"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "6",
+    "bestRating": "5",
+    "worstRating": "4"
+  },
+  "review": [
     {
       "@type": "Review",
-      "position": 1,
       "author": {
         "@type": "Person",
         "name": "Priya Sharma"
@@ -142,14 +156,10 @@
         "bestRating": "5"
       },
       "reviewBody": "Found an electrician in 15 minutes! Got 3 bids and chose the best price. One provider was late, but overall good experience.",
-      "itemReviewed": {
-        "@type": "Service",
-        "name": "Electrical Work"
-      }
+      "datePublished": "2025-01-10"
     },
     {
       "@type": "Review",
-      "position": 2,
       "author": {
         "@type": "Person",
         "name": "Rajesh Kumar"
@@ -160,14 +170,10 @@
         "bestRating": "5"
       },
       "reviewBody": "Zero commission means more earnings for me. I get direct jobs without middlemen. Already completed 18 tasks this month!",
-      "itemReviewed": {
-        "@type": "Service",
-        "name": "AC Repair Service"
-      }
+      "datePublished": "2025-01-12"
     },
     {
       "@type": "Review",
-      "position": 3,
       "author": {
         "@type": "Person",
         "name": "Ananya Patel"
@@ -178,14 +184,10 @@
         "bestRating": "5"
       },
       "reviewBody": "Booked a plumber at 11 PM, fixed by morning. App is still in beta so had a small glitch, but support helped quickly.",
-      "itemReviewed": {
-        "@type": "Service",
-        "name": "Plumbing Service"
-      }
+      "datePublished": "2025-01-15"
     },
     {
       "@type": "Review",
-      "position": 4,
       "author": {
         "@type": "Person",
         "name": "Vikram Singh"
@@ -196,14 +198,10 @@
         "bestRating": "5"
       },
       "reviewBody": "Finally a platform that doesn't eat into my hard-earned money. Fair bidding system helps me quote my actual rates.",
-      "itemReviewed": {
-        "@type": "Service",
-        "name": "Carpentry Work"
-      }
+      "datePublished": "2025-01-18"
     },
     {
       "@type": "Review",
-      "position": 5,
       "author": {
         "@type": "Person",
         "name": "Meera Desai"
@@ -214,14 +212,10 @@
         "bestRating": "5"
       },
       "reviewBody": "Love that my phone number stays private until I confirm the booking. Safety first, especially for women living alone.",
-      "itemReviewed": {
-        "@type": "Service",
-        "name": "Home Cleaning"
-      }
+      "datePublished": "2025-01-20"
     },
     {
       "@type": "Review",
-      "position": 6,
       "author": {
         "@type": "Person",
         "name": "Arjun Reddy"
@@ -232,10 +226,7 @@
         "bestRating": "5"
       },
       "reviewBody": "I can see multiple job requests and choose what fits my schedule. Still learning the app, but loving the flexibility!",
-      "itemReviewed": {
-        "@type": "Service",
-        "name": "Painting Service"
-      }
+      "datePublished": "2025-01-22"
     }
   ]
 }
